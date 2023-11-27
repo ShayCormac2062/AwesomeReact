@@ -1,15 +1,16 @@
-import {StyleSheet, Text, View} from 'react-native';
+import React from 'react';
+import {View, Text, Button} from 'react-native';
 
-export const HomeScreen = () => (
-  <View style={styles.container}>
-    <Text>Home Screen</Text>
-  </View>
-);
+const HomeScreen = ({navigation}) => {
+  return (
+    <View>
+      <Text>Home Screen</Text>
+      <Button
+        title="Go to Nested Screen"
+        onPress={() => navigation.navigate('NestedScreen')}
+      />
+    </View>
+  );
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
+export default HomeScreen;
