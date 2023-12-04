@@ -4,6 +4,7 @@ import {HomeScreen} from '../screens/HomeScreen';
 import {NewsScreen} from '../screens/NewsScreen';
 import {ChatScreen} from '../screens/ChatScreen';
 import {SettingsScreen} from '../screens/SettingsScreen';
+import {useTranslation} from 'react-i18next';
 
 const Tab = createBottomTabNavigator();
 export const HomeIcon = () => <FontAwesomeGlyphs name="home" size={24} />;
@@ -19,32 +20,36 @@ export const TabNavigator = () => (
       name="Home"
       component={HomeScreen}
       options={{
-        tabBarIcon: ({color, size}) => <HomeIcon />,
+        tabBarIcon: ({}) => <HomeIcon />,
         headerShown: false,
+        title: useTranslation('home'),
       }}
     />
     <Tab.Screen
       name="News"
       component={NewsScreen}
       options={{
-        tabBarIcon: ({color, size}) => <NewsIcon />,
+        tabBarIcon: ({}) => <NewsIcon />,
         headerShown: false,
+        title: useTranslation('news'),
       }}
     />
     <Tab.Screen
       name="Chat"
       component={ChatScreen}
       options={{
-        tabBarIcon: ({color, size}) => <ChatIcon />,
+        tabBarIcon: ({}) => <ChatIcon />,
         headerShown: false,
+        title: useTranslation('chat'),
       }}
     />
     <Tab.Screen
       name="Settings"
       component={SettingsScreen}
       options={{
-        tabBarIcon: ({color, size}) => <SettingsIcon />,
+        tabBarIcon: ({}) => <SettingsIcon />,
         headerShown: false,
+        title: useTranslation('home'),
       }}
     />
   </Tab.Navigator>
