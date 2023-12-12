@@ -1,14 +1,37 @@
-import {StyleSheet, Text, View} from 'react-native';
-export const AboutScreen = () => (
-  <View style={styles.container}>
-    <Text>About Screen</Text>
-  </View>
-);
+import {SafeAreaView, StyleSheet, Text, View} from "react-native";
+import {useTheme} from "../src/modules/theme/hooks/useTheme";
+import React from "react";
 
-const styles = StyleSheet.create({
+export const AboutScreen = () => {
+
+  const {Colors, selectTheme, changeTheme} = useTheme();
+  const styles = style(Colors);
+
+  return (
+    <SafeAreaView style={[styles.container]}>
+      <View style={[styles.content]}>
+        <Text style={styles.titleText}>About</Text>
+      </View>
+    </SafeAreaView>
+  )
+}
+
+const style = (colors) => StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+    alignItems: "center",
+    backgroundColor: colors.backgroundLight
+  }
+  ,
+  content: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  }
+  ,
+  titleText: {
+    color: colors.textLight,
+    fontSize:
+      20,
+  }
 });

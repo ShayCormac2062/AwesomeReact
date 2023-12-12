@@ -17,7 +17,7 @@ export const StackNavigator = () => (
           <TouchableOpacity
             style={styles.aboutButton}
             onPress={() => navigation.navigate('About')}>
-            <Text style={styles.aboutButtonText}>О приложении</Text>
+            <Text style={styles.aboutButtonText}>About</Text>
           </TouchableOpacity>
         ),
       })}

@@ -1,15 +1,37 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {SafeAreaView, StyleSheet, Text, View} from "react-native";
+import {useTheme} from "../src/modules/theme/hooks/useTheme";
+import React from "react";
 
-export const ChatScreen = () => (
-  <View style={styles.container}>
-    <Text>Chat Screen</Text>
-  </View>
-);
+export const ChatScreen = () => {
 
-const styles = StyleSheet.create({
+  const {Colors, selectTheme, changeTheme} = useTheme();
+  const styles = style(Colors);
+
+  return (
+    <SafeAreaView style={[styles.container]}>
+      <View style={[styles.content]}>
+        <Text style={styles.titleText}>ChatScreen</Text>
+      </View>
+    </SafeAreaView>
+  )
+}
+
+const style = (colors) => StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+    alignItems: "center",
+    backgroundColor: colors.backgroundLight
+  }
+  ,
+  content: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  }
+  ,
+  titleText: {
+    color: colors.textLight,
+    fontSize:
+      20,
+  }
 });
