@@ -32,5 +32,6 @@ const style = (colors) => StyleSheet.create({
     color: colors.textLight,
     fontSize:
       20,
+    fontFamily: 'pro'
   }
 });

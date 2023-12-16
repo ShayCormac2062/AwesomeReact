@@ -31,7 +31,7 @@ const style = (colors) => StyleSheet.create({
   ,
   titleText: {
     color: colors.textLight,
-    fontSize:
-      20,
+    fontSize: 20,
+    fontFamily: 'pro'
   }
 });

@@ -1,17 +1,11 @@
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import FontAwesomeGlyphs from 'react-native-vector-icons/FontAwesome';
-import {HomeScreen} from '../screens/HomeScreen';
-import {NewsScreen} from '../screens/NewsScreen';
-import {ChatScreen} from '../screens/ChatScreen';
-import {SettingsScreen} from '../screens/SettingsScreen';
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { HomeScreen } from "../screens/HomeScreen";
+import { NewsScreen } from "../screens/NewsScreen";
+import { ChatScreen } from "../screens/ChatScreen";
+import { SettingsScreen } from "../screens/SettingsScreen";
+import CustomIcon from "../screens/CustomIcon";
 
 const Tab = createBottomTabNavigator();
-export const HomeIcon = () => <FontAwesomeGlyphs name="home" size={24} />;
-export const NewsIcon = () => (
-  <FontAwesomeGlyphs name="newspaper-o" size={24} />
-);
-export const ChatIcon = () => <FontAwesomeGlyphs name="comments" size={24} />;
-export const SettingsIcon = () => <FontAwesomeGlyphs name="cog" size={24} />;
 
 export const TabNavigator = () => (
   <Tab.Navigator>
@@ -19,7 +13,7 @@ export const TabNavigator = () => (
       name="Home"
       component={HomeScreen}
       options={{
-        tabBarIcon: ({color, size}) => <HomeIcon />,
+        tabBarIcon: ({color, size}) => CustomIcon('power-off'),
         headerShown: false,
       }}
     />
@@ -27,7 +21,7 @@ export const TabNavigator = () => (
       name="News"
       component={NewsScreen}
       options={{
-        tabBarIcon: ({color, size}) => <NewsIcon />,
+        tabBarIcon: ({color, size}) => CustomIcon('check'),
         headerShown: false,
       }}
     />
@@ -35,7 +29,7 @@ export const TabNavigator = () => (
       name="Chat"
       component={ChatScreen}
       options={{
-        tabBarIcon: ({color, size}) => <ChatIcon />,
+        tabBarIcon: ({color, size}) => CustomIcon('times'),
         headerShown: false,
       }}
     />
@@ -43,7 +37,7 @@ export const TabNavigator = () => (
       name="Settings"
       component={SettingsScreen}
       options={{
-        tabBarIcon: ({color, size}) => <SettingsIcon />,
+        tabBarIcon: ({color, size}) => CustomIcon('signal'),
         headerShown: false,
       }}
     />

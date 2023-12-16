@@ -65,6 +65,7 @@ const style = (colors) => StyleSheet.create({
     color: colors.textLight,
     fontSize:
       20,
+    fontFamily: 'pro'
   }
   ,
   appButtonText: {
@@ -72,6 +73,7 @@ const style = (colors) => StyleSheet.create({
     fontSize:
       16,
     textAlign: "center",
+    fontFamily: 'pro'
   },
   loader: {
     flex: 1,
